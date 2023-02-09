@@ -6,4 +6,4 @@ FROM tomcat:latest
 MAINTAINER "Suheab" 
 
 # copy war file on to container 
-COPY iwayQApp-1.0-RELEASE.war /usr/local/tomcat/webapps
+COPY ./target/iwayQApp-1.0-RELEASE.war /usr/local/tomcat/webapps
