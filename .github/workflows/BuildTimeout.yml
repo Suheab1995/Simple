@@ -16,7 +16,7 @@ jobs:
          command: |
           max_retry=3
           counter=0
-          until ls -la
+          until la -la
           do
             sleep 1
             [[ counter -eq $max_retry ]] && echo "Failed!" && exit 1
