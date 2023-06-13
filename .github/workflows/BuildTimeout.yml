@@ -12,7 +12,7 @@ jobs:
     - uses: nick-fields/retry@v2
       with:
          timeout_seconds: 10
-         max_attempts: 4
+         max_attempts: 3
          command: |
           max_retry=3
           counter=0
