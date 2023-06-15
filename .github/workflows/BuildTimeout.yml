@@ -5,7 +5,7 @@ on:
 jobs:
   build:
 
-    runs-on: suheabrunner1
+    runs-on: [self-hosted, suheabrunner1]
 
     steps:
     - uses: actions/checkout@v3
