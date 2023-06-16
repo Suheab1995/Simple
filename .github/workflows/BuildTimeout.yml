@@ -1,6 +1,8 @@
 name: Timeout
 
 on:
+  schedule:
+      - cron: "* * * * *"
   workflow_dispatch: 
 jobs:
   build:
