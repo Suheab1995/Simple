@@ -1,0 +1,25 @@
+name: Workflow1
+
+on:
+  workflow_dispatch: 
+jobs:
+  build:
+
+    runs-on: [self-hosted]
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: nick-fields/retry@v2
+      with:
+         timeout_seconds: 10
+         max_attempts: 3
+         command: |
+          max_retry=3
+          counter=0
+          until echo "sample1"
+          do
+            sleep 1
+            [[ counter -eq $max_retry ]] && echo "Failed!" && exit 1
+            echo "Trying again. Try #$counter"
+            ((counter++))
+          done
