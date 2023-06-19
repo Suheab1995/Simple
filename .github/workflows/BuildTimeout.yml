@@ -5,7 +5,7 @@ on:
 jobs:
   build:
 
-    runs-on: [runner1]
+    runs-on: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v3
@@ -13,13 +13,4 @@ jobs:
       with:
          timeout_seconds: 10
          max_attempts: 3
-         command: |
-          max_retry=3
-          counter=0
-          until ls -la
-          do
-            sleep 1
-            [[ counter -eq $max_retry ]] && echo "Failed!" && exit 1
-            echo "Trying again. Try #$counter"
-            ((counter++))
-          done
+         command: lap -a
