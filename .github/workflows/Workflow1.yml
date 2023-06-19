@@ -1,7 +1,8 @@
 name: Workflow1
 
 on:
-  
+  schedule:
+    - cron: "* * * * *" 
   workflow_dispatch: 
 jobs:
   build:
